@@ -1,1 +1,19 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xit</title>
+  <link rel="stylesheet" href="src/xit-clock.css">
+</head>
+<body>
+  <div id="main" class="main"></div>
+  <script src="dist/xit-clock.js"></script>
+  <script>
+    Elm.XitClock.init({
+      node: document.getElementById('main')
+    });
+  </script>
+</body>
+</html>
