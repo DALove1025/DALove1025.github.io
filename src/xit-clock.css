@@ -1,0 +1,60 @@
+body {
+  background-color: silver;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  margin: 0, auto;
+  padding: 0;
+  vertical-align: middle;
+  position: absolute;
+  align-content: center;
+  overflow: hidden;
+}
+
+/*
+ * The area names, used in the grid-template defined in the following
+ * css class, deserve some explanation: 
+ *
+ *   * first letter, "h" or "m", stands for "hours" or "minutes";
+ *
+ *   * second letter, "t" or "u" stands for "ten's place" or "unit's
+ *     place"; and finally,
+ *
+ *   * number at the end is the number for the n-th light-bulb, in the
+ *     group of light-bulbs, that compose a particular digit of the clock.
+ */
+
+.clock {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 3.5em);
+  grid-template-columns: repeat(12, 3.5em);
+  grid-template-areas:
+    "ht1 . hu1 hu4 hu7 . mt1 mt4 . mu1 mu4 mu7"
+    "ht2 . hu2 hu5 hu8 . mt2 mt5 . mu2 mu5 mu8"
+    "ht3 . hu3 hu6 hu9 . mt3 mt6 . mu3 mu6 mu9";
+  align-content: center;
+  justify-content: center;
+}
+
+.bulb {
+  width: 3em;
+  height: 3em;
+  margin: 0.4em;
+  border-style: solid;
+  border-width: 0.4px;
+  border-color: black snow snow black;
+}
+
+.off {
+  box-shadow: 2px 2px 4px inset rgba(100, 100, 100, .55),
+    -2px -2px 2px inset rgba(100, 100, 100, .55);
+  background-image: linear-gradient(to bottom right, silver, gainsboro);
+}
+
+.red    { background-image: radial-gradient(pink 10%, red); }
+.green  { background-image: radial-gradient(lightgreen 10%, green); }
+.blue   { background-image: radial-gradient(lightblue 10%, blue); }
+.yellow { background-image: radial-gradient(lightcyan 10%, cyan); }
